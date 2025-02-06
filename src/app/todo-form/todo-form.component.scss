@@ -1,0 +1,42 @@
+.mat-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .mat-form-field {
+    width: 100%;
+    max-width: 300px;   
+  }
+
+  button {
+    margin-bottom: 13px;
+  }
+}
+
+.tasks-container {
+  width: 100%;
+  max-width: 364px;
+  margin: 0 auto;
+
+  .task-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 8px;
+
+    .task-check, & > div {
+      width: auto;
+    }
+
+    .task-name{
+      display: flex;
+      align-items: center;
+    }
+
+    .delete-button {
+      cursor: pointer;
+      padding: 4px;
+    }
+  }
+}

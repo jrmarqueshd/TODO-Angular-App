@@ -1,0 +1,25 @@
+<form [formGroup]="myForm" class="mat-form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="mat-form-field">
+    <mat-label>Task name</mat-label>
+    <input formControlName="name" color="primary" matInput placeholder="Enter a task name" value="">
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">
+    <mat-icon [ngStyle]="{'color': '#f2f2f2'}">add_circle</mat-icon>
+  </button>
+</form>
+
+<mat-selection-list #tasksList class="tasks-list">
+  <div class="tasks-container" *ngFor="let task of tasks">
+    <span class="task-list">
+      <div class="task-name">
+        <mat-checkbox color="primary" [checked]="task.completed"
+          (change)="onChangeStatus($event, task)">{{task.name}}</mat-checkbox>
+      </div>
+      <mat-icon class="delete-button" (click)="onRemove(task.index)" color="error">
+        delete_forever
+      </mat-icon>
+    </span>
+    <mat-divider></mat-divider>
+  </div>
+</mat-selection-list>
